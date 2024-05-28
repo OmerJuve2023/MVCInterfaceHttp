@@ -1,0 +1,10 @@
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: spring-boot-MVC
+logging:
+  level:
+    com.omersolutions.mvcinterfacehttp: DEBUG
+server:
+  port: 8080
