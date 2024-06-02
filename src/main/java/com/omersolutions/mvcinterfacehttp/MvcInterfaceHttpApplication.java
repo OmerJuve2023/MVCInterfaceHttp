@@ -15,7 +15,7 @@ public class MvcInterfaceHttpApplication {
     public static void main(String[] args) {
         SpringApplication.run(MvcInterfaceHttpApplication.class, args);
     }
-
+/*
     @Bean
     UserHttpClient userHttpClient() {
         RestClient client = RestClient.builder()
@@ -24,5 +24,5 @@ public class MvcInterfaceHttpApplication {
         HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(RestClientAdapter.create(client))
                 .build();
         return factory.createClient(UserHttpClient.class);
-    }
+    }*/
 }
