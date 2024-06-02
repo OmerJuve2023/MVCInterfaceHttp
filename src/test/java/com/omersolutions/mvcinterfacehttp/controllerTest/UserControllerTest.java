@@ -6,6 +6,7 @@ import com.omersolutions.mvcinterfacehttp.user.UserHttpClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -17,6 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
+@SpringBootTest
 @WebMvcTest(UserController.class)
 public class UserControllerTest {
 
@@ -29,7 +31,14 @@ public class UserControllerTest {
     @Test
     public void shouldReturnUsers() throws Exception {
         // Arrange
-        User user = new User(1, "John Doe", "", "", null, "", "", null);
+        User user = new User(1,
+                "John Doe",
+                "",
+                "",
+                null,
+                "",
+                "",
+                null);
         when(userHttpClient.findAll()).thenReturn(Collections.singletonList(user));
 
         // Act and Assert
@@ -45,7 +54,14 @@ public class UserControllerTest {
     public void shouldReturnUserById() throws Exception {
         // Arrange
         int id = 1;
-        User user = new User(id, "Leanne Graham", "", "Sincere@april.biz", null, "", "", null);
+        User user = new User(id,
+                "Leanne Graham",
+                "",
+                "Sincere@april.biz",
+                null,
+                "",
+                "",
+                null);
         when(userHttpClient.findById(id)).thenReturn(user);
 
         // Act and Assert
